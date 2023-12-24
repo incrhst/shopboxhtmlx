@@ -1,12 +1,24 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
+
+{% block title %}Flowbite Flask{% endblock %}
+
+
 <head>
     <title>Login</title>
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/output.css') }}">
+{% endblock %}
+
 </head>
 <body>
     {% if error %}
         <p>{{ error }}</p>
     {% endif %}
+    {% block content %}
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+        <!-- Your Navbar content here -->
+    </nav>
+    <!-- Your page-specific content here -->
     <form method="POST">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username"><br><br>
@@ -14,6 +26,15 @@
         <input type="password" id="password" name="password"><br><br>
         <button type="submit">Login</button>
     </form>
+
+{% endblock %}
+
+
+
+    {% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+{% endblock %}
+
 </body>
 </html>
 

@@ -1,6 +1,18 @@
-<html>
-	<body>
-		<h1>Welcome to the home page</h1>
-		<p>Have fun</p>
-	</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Flowbite Flask{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{url_for('static', filename='dist/css/output.css')}}">
+{% endblock %}
+
+{% block content %}
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+        <!-- Your Navbar content here -->hello
+    </nav>
+    <!-- Your page-specific content here -->
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+{% endblock %}
